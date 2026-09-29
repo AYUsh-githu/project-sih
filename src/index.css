@@ -1,0 +1,508 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark theme default: Deep navy/charcoal base with teal->cyan accents */
+    --background: 222 47% 7%; /* Deep navy/charcoal */
+    --foreground: 210 40% 98%;
+
+    --card: 223 40% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 223 40% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 171 77% 64%; /* Teal #5eead4 */
+    --primary-foreground: 222 47% 7%;
+
+    --secondary: 189 94% 53%; /* Cyan #22d3ee */
+    --secondary-foreground: 222 47% 7%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 171 77% 64%;
+    --accent-foreground: 222 47% 7%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 171 77% 64%;
+
+    --radius: 1rem;
+
+    /* Glass Effect Dark Default */
+    --glass-bg: rgba(17, 24, 39, 0.7);
+    --glass-border: rgba(94, 234, 212, 0.15);
+    --glass-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+
+    /* ---- Theme-aware effect tokens (dark default) ---- */
+    --particle-rgb: 94 234 212;                 /* teal-300, dark default */
+    --particle-alpha: 0.5;
+    --shine-strength: rgba(255, 255, 255, 0.12);
+    --blob-opacity: 0.35;
+    --card-lift: -8px;
+  }
+
+  .light {
+    /* Light theme: Warm soft cream/white base with restorative botanical sage accents */
+    --background: 40 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 174 84% 28%; /* Deep botanical forest teal #0f766e for WCAG AAA contrast */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 199 89% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 14% 94%;
+    --muted-foreground: 215 16% 40%;
+
+    --accent: 174 84% 28%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 86%;
+    --input: 220 13% 86%;
+    --ring: 174 84% 28%;
+
+    /* Glass Effect Light (Luxury Frosted Silk) */
+    --glass-bg: rgba(255, 255, 255, 0.84);
+    --glass-border: rgba(15, 118, 110, 0.14);
+    --glass-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.08), 0 4px 14px -2px rgba(13, 148, 136, 0.05);
+
+    /* ---- Theme-aware effect tokens (light) ---- */
+    --particle-rgb: 13 148 136;                 /* rich emerald-teal */
+    --particle-alpha: 0.58;                     /* clearly visible in light mode */
+    --shine-strength: rgba(255, 255, 255, 0.75);
+    --blob-opacity: 0.42;                       /* visible, velvety liquid morning aurora */
+    --card-lift: -8px;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-500 font-sans;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  /* Sleek modern custom scrollbar matching Haven theme & eliminating OS scrollbar clutter */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.28);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(94, 234, 212, 0.55);
+  }
+
+  /* Firefox custom scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.28) transparent;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    @apply outline-none ring-2 ring-haven-teal ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer components {
+  /* ADVANCED BUTTON VARIANTS */
+  .btn-primary {
+    @apply bg-gradient-to-r from-teal-500 to-cyan-500 text-slate-950 font-semibold px-6 py-3.5 rounded-2xl 
+           shadow-lg hover:shadow-glow-teal transform hover:scale-[1.03] hover:-translate-y-0.5 
+           transition-all duration-300 border border-teal-300/30 backdrop-blur-sm active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-teal-600/30 to-cyan-600/30 text-teal-300 font-medium px-6 py-3.5 rounded-2xl 
+           shadow-md hover:shadow-lg transform hover:scale-[1.03] hover:-translate-y-0.5 
+           transition-all duration-300 border border-teal-500/30 backdrop-blur-sm active:scale-[0.98];
+  }
+
+  /* Teal Glass Button for Authority Portal */
+  .btn-glass {
+    @apply bg-teal-950/30 dark:bg-teal-900/20 backdrop-blur-xl border border-teal-500/30 
+           text-foreground font-semibold px-8 py-4 rounded-2xl 
+           hover:bg-teal-800/30 hover:border-teal-400/50 hover:shadow-glow-teal 
+           transform hover:scale-[1.03] hover:-translate-y-1 
+           transition-all duration-300 shadow-glass active:scale-[0.98];
+  }
+
+  /* Violet->Teal Gradient Reserved for Survivor CTA */
+  .btn-hero {
+    @apply bg-gradient-to-r from-violet-600 via-indigo-600 to-teal-500 text-white font-bold 
+           px-8 py-4 rounded-2xl shadow-2xl hover:shadow-glow-teal 
+           transform hover:scale-[1.04] hover:-translate-y-1 
+           transition-all duration-500 border border-white/20 backdrop-blur-xl active:scale-[0.98];
+  }
+
+  /* ---- Card lift + smooth stable reflection ---- */
+  .glass-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 1rem;
+    transform: translateY(0px) rotateX(var(--tilt-rx, 0deg)) rotateY(var(--tilt-ry, 0deg));
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.35s ease,
+                border-color 0.35s ease;
+    will-change: transform, box-shadow;
+  }
+
+  .glass-card:hover {
+    transform: translateY(var(--card-lift, -8px))
+               rotateX(var(--tilt-rx, 0deg))
+               rotateY(var(--tilt-ry, 0deg)) !important;
+    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.5),
+                0 12px 24px -8px rgba(94, 234, 212, 0.2),
+                0 0 0 1px rgba(94, 234, 212, 0.25) !important;
+  }
+
+  .light .glass-card:hover {
+    box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.18),
+                0 12px 24px -8px rgba(13, 148, 136, 0.15),
+                0 0 0 1px rgba(13, 148, 136, 0.25) !important;
+  }
+
+  /* Smooth, hardware-accelerated reflection sweep */
+  .glass-card::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 42%,
+      var(--shine-strength) 50%,
+      transparent 58%,
+      transparent 100%
+    );
+    transform: translateX(-100%);
+    animation: shine-sweep 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation-delay: var(--shine-delay, 0s);
+    will-change: transform;
+  }
+
+  /* 3D Tilt Card */
+  .tilt-card {
+    transform-style: preserve-3d;
+  }
+
+  /* Animated Border with Shimmer */
+  .animated-border {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animated-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(94, 234, 212, 0.6),
+      rgba(139, 92, 246, 0.6),
+      transparent
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Page Transitions - Fast, smooth, responsive */
+  .page-enter {
+    opacity: 0;
+    transform: translateY(6px);
+    animation: pageEnter 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .page-exit {
+    opacity: 1;
+    transform: translateY(0);
+    animation: pageExit 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Sidebar transitions */
+  .sidebar-enter {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+  }
+
+  .sidebar-enter-active {
+    transform: translateX(0);
+  }
+
+  .sidebar-exit {
+    transform: translateX(0);
+    transition: transform 0.3s ease-in;
+  }
+
+  .sidebar-exit-active {
+    transform: translateX(-100%);
+  }
+}
+
+/* ---- Background particles & blobs ---- */
+.particle {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgb(var(--particle-rgb) / var(--particle-alpha));
+  box-shadow: 0 0 6px rgb(var(--particle-rgb) / calc(var(--particle-alpha) * 0.8));
+  will-change: transform, opacity;
+}
+
+.blob {
+  position: absolute;
+  width: 45vw;
+  height: 45vw;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: var(--blob-opacity);
+  animation: gradient-shift 18s ease-in-out infinite alternate;
+}
+
+.blob-a {
+  top: -10%;
+  left: -10%;
+  background: radial-gradient(circle at 30% 30%, #14b8a6, transparent 60%);
+}
+
+.blob-b {
+  bottom: -15%;
+  right: -10%;
+  background: radial-gradient(circle at 70% 70%, #6366f1, transparent 60%);
+  animation-delay: -9s;
+}
+
+.blob-c {
+  top: 35%;
+  left: 30%;
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle at 50% 50%, rgba(94, 234, 212, 0.12), transparent 65%);
+  animation-delay: -4s;
+}
+
+/* Light mode liquid morning aurora (Velvety eucalyptus, morning sky & warm sunlit lavender) */
+.light .blob-a {
+  background: radial-gradient(circle at 30% 30%, rgba(45, 212, 191, 0.75), rgba(56, 189, 248, 0.45), transparent 65%);
+}
+
+.light .blob-b {
+  background: radial-gradient(circle at 70% 70%, rgba(168, 85, 247, 0.55), rgba(99, 102, 241, 0.45), transparent 65%);
+}
+
+.light .blob-c {
+  background: radial-gradient(circle at 50% 50%, rgba(254, 240, 138, 0.35), rgba(45, 212, 191, 0.25), transparent 65%);
+}
+
+.light .particle {
+  box-shadow: 0 0 8px rgba(13, 148, 136, 0.45);
+}
+
+/* KEYFRAMES */
+@keyframes shine-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  60%, 100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes textReveal {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-14px) rotate(6deg);
+  }
+  66% {
+    transform: translateY(8px) rotate(-6deg);
+  }
+}
+
+@keyframes modalSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pageEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageExit {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .glass-card::after {
+    animation: none !important;
+    transform: translateX(100%) !important;
+  }
+
+  .glass-card:hover {
+    transform: none !important;
+  }
+
+  .blob {
+    animation: none !important;
+  }
+
+  .tilt-card:hover {
+    transform: none !important;
+  }
+
+  .animated-border::before {
+    animation: none !important;
+    opacity: 0.5;
+  }
+
+  .animate-float,
+  .animate-pulse-gentle,
+  .animate-bounce-gentle,
+  .animate-gradient-shift,
+  .animate-rotate-gentle,
+  .animate-shimmer {
+    animation: none !important;
+  }
+}
+
+/* ---- Avatar High-Contrast Luminescent Glow Engine ---- */
+.dark agent-robot-avatar,
+:not(.light) agent-robot-avatar {
+  filter: drop-shadow(0 0 16px rgba(94, 234, 212, var(--avatar-glow-alpha, 0.75)))
+          drop-shadow(0 0 32px rgba(20, 184, 166, calc(var(--avatar-glow-alpha, 0.75) * 0.55)));
+  transition: filter 0.3s ease;
+}
+
+.light agent-robot-avatar {
+  filter: drop-shadow(0 6px 16px rgba(15, 118, 110, 0.18))
+          drop-shadow(0 2px 6px rgba(15, 23, 42, 0.08));
+  transition: filter 0.3s ease;
+}

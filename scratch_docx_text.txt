@@ -1,0 +1,358 @@
+
+
+
+
+
+
+
+
+SMART INDIA HACKATHON 2026
+
+
+Problem Statement ID –26094
+
+
+Problem Statement Title-
+
+
+AI-Powered Dynamic Mental Health Monitoring and Distress Prediction System for Victims of Atrocities
+
+
+Theme-
+
+
+MedTech/BioTech/ HealthTech
+
+
+PS Category- Software
+
+
+
+
+
+Team ID-
+
+
+
+
+
+Team Name - Esoteric
+
+
+
+
+
+
+
+
+
+
+
+
+
+Esoteric
+Haven: Dynamic mental health monitoring and distress response for victims of atrocities
+
+
+Proposed Solution:
+
+
+Haven combines a custom evidence-to-action harness with a victim facing platform designed for calm, clarity and continued support with the inclusion of base we display our contribution to the existing solutions
+
+
+How it addresses the problem
+
+
+Purpose-built analytical harness:
+
+
+Multiple replaceable language, speech, translation and scoring models
+
+work through one governed evidence pipeline.
+
+
+Victim-first support environment
+
+
+The platform encourages continued engagement through a calm text and speech-to-speech interface 3D Haven companion, private journaling, relevant resources, case clarity, self-booked counselling and
+
+supervised peer support.
+
+
+Separate human workflows
+
+
+Counsellors receive mental-health evidence. Authorities receive
+
+only the protection, relief, legal or rehabilitation information needed for their task
+
+
+Understands the wider stress context:
+
+
+Considers threats, intimidation, repeated hearings, delays, economic hardship, social isolation and rehabilitation
+
+barriers alongside mental-health signals.
+
+
+
+
+
+
+
+
+
+
+
+
+980695819838
+
+Esoteric
+
+
+TECHNICAL APPROACH
+
+
+
+
+
+
+
+
+
+Data exposure
+
+
+
+Role-scoped fields and audit logs
+
+
+Language variation
+
+
+
+Per-language and channel validation
+
+
+No historical labels
+
+
+
+Prospective human-reviewed evidence
+
+
+Alert fatigue
+
+
+
+Deadlines, acknowledgement and escalation
+
+
+
+
+
+
+
+Esoteric9806958-144288Feasibility and viability
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Staged deployment
+
+
+1 Establish Case ingestion, rules,
+
+questionnaires, counselor
+
+queue and authority tasks
+
+
+2 Expand Multilingual text, speech
+
+evidence and shadow
+
+evaluation
+
+
+
+
+3 Connect Approved NHAA, district, legal
+
+and emergency connectors
+
+
+4 Validate Predictive support models
+
+after representative reviewed
+
+data exists
+
+
+
+
+
+
+
+
+
+
+Wrong alert
+
+
+
+Evidence spans and timeframe checks
+
+
+The system becomes viable when NHAA, counselors, district officials, emergency responders and service providers agree on:
+
+Their responsibilities.
+
+What information each role may see.
+
+Who can contact the victim.
+
+Who can approve an intervention.
+
+Who can close a task.
+
+What happens when nobody responds.
+
+How records are retained and corrected.
+
+How official integrations operate.6806183764322Control is added at each step; deployment does not depend on trusting one model.
+
+
+
+
+
+
+
+
+Risks and design controls
+
+
+Viability
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Esoteric9806958-144288Impact and benefits
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Esoteric9806958-200514RESEARCH AND REFERENCES
+
+
+RESEARCH AND REFERENCES
+
+
+Government and statutory foundation
+
+
+• National Helpline Against Atrocities (NHAA) Portal and Ministry of Social Justice Annual Report 2025–26
+
+
+• SC/ST (Prevention of Atrocities) Act, 1989, especially Section 15A
+
+
+• SC/ST Prevention of Atrocities Rules, 1995 and 2016–18 amendments
+
+
+Mental-health support and emergency pathways
+
+
+• WHO Psychological First Aid
+
+
+• NIMH Adult Suicide Safety Assessment Toolkit
+
+
+• Tele-MANAS Operational Guidelines
+
+
+• Emergency Response Support System 112
+
+
+Responsible analytical design
+
+
+• NICE NG225 guidance on avoiding global suicide-risk prediction scales
+
+
+• WHO Ethics and Governance of Artificial Intelligence for Health
+
+
+• NIST AI Risk Management Framework
+
+
+• Digital Personal Data Protection Act and Rules, 2025
+
+
+Measurement, multilingual AI and inclusive access
+
+
+• WHO-5, PHQ-9, GAD-7 and PCL-5 measurement guidance
+
+
+• EmoBox and SER-Evals multilingual speech-emotion benchmarks
+
+
+• W3C Web Content Accessibility Guidelines 2.2
+
+
+• SAMHSA Core Competencies for Peer Support Workers
+
+
+
+
+
+Source links:
+
+
+
+
+
+nhapoa.gov.in/en socialjustice.gov.in indiacode.nic.in
+
+112.gov.in mohfw.gov.in who.int
+
+nimh.nih.gov nice.org.uk nist.gov
+
+meity.gov.in
+
+isca-archive.org samhsa.gov
+
